@@ -4,7 +4,7 @@ import Input from "@/components/input";
 import Button from "@/components/button";
 import SocialLogin from "@/components/social-login";
 import { useActionState } from "react";
-import { login } from "@/login/actions";
+import { login } from "@/(auth)/login/actions";
 
 const LoginPage = () => {
   const [state, action] = useActionState(login, null);

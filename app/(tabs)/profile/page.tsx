@@ -7,7 +7,7 @@ const getUser = async () => {
   if (session.id) {
     const user = await db.user.findUnique({
       where: {
-        id: session.id,
+        id: Number(session.id),
       },
     });
     if (user) {
