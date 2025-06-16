@@ -58,7 +58,6 @@ export default async function ProductDetail({
     redirect("/products");
   };
 
-  console.log(product.photo, "<<<");
   return (
     <div>
       <div className="relative aspect-square">
