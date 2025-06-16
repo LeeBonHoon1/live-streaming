@@ -58,6 +58,7 @@ export default async function ProductDetail({
     redirect("/products");
   };
 
+  console.log(product.photo, "<<<");
   return (
     <div>
       <div className="relative aspect-square">
@@ -67,7 +68,7 @@ export default async function ProductDetail({
         <div className="size-10 rounded-full">
           {product.user.avatar !== null ? (
             <Image
-              src={product.user.avatar}
+              src={`${product.user.avatar}`}
               width={40}
               height={40}
               alt={product.user.username}
