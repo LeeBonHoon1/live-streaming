@@ -21,19 +21,24 @@ async function getProduct(id: number) {
   return product;
 }
 
-export default async function Modal({ params }: { params: { id: string } }) {
-  const id = Number(params.id);
-  if (isNaN(id)) {
+export default async function Modal({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const productId = Number(id);
+  if (isNaN(productId)) {
     return notFound();
   }
 
-  const product = await getProduct(id);
+  const product = await getProduct(productId);
   if (!product) {
     return notFound();
   }
 
   return (
-    <div className="absolute left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black ">
+    <div className="absolute left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black">
       <CloseButton />
 
       <div className="flex h-2/3 w-full max-w-screen-sm flex-col gap-5 p-5">

@@ -66,7 +66,6 @@ export default function AddProduct() {
   const onValid = async () => {
     await onSubmit();
   };
-  console.log(register("title"));
   return (
     <div>
       <form action={onValid} className="p-5 flex flex-col gap-5">
