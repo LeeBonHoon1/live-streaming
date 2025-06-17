@@ -21,11 +21,11 @@ async function getProduct(id: number) {
   return product;
 }
 
-export default async function Modal({
-  params,
-}: {
+interface PageProps {
   params: Promise<{ id: string }>;
-}) {
+}
+
+export default async function Modal({ params }: PageProps) {
   const { id } = await params;
   const productId = Number(id);
   if (isNaN(productId)) {

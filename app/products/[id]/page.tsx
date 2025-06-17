@@ -31,11 +31,11 @@ async function getProduct(id: number) {
   return product;
 }
 
-export default async function ProductDetail({
-  params,
-}: {
-  params: { id: string };
-}) {
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function ProductDetail({ params }: PageProps) {
   const { id } = await params;
   const productId = Number(id);
   if (isNaN(productId)) {

@@ -68,5 +68,5 @@ export async function GET(request: NextRequest) {
     await sessionLogin(newUser.id);
   }
 
-  await sessionLogin(user.id);
+  await sessionLogin(user!.id);
 }
